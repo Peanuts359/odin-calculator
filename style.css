@@ -1,0 +1,79 @@
+* {
+    background-color: #25496e;
+    font-family: 'Arial', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-optical-sizing: auto;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.calculator {
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.display-container {
+    background-color: #306091;
+    width: 95%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 24px;
+    color: #ffffff;
+    border-radius: 5px;
+    border: 1px #306091;
+    margin-bottom: 10px;
+    justify-content: flex-end;
+}
+
+.display {
+    font-size: 60px;
+    color: #ffffff;
+    background-color: #306091;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
+    padding: 10px;
+}
+
+
+.keys {
+    width: calc(25% - 20px);
+    height: 60px;
+    margin: 3px;
+    background-color: #306091;
+    border: 5px solid #306091;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.keys#zero {
+    flex-grow: 1.65;
+}
+
+.keys#point,    
+.keys#equals {
+    width: calc(25% - 20px);
+}
