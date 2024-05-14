@@ -22,7 +22,6 @@ function flipSigns(input) {
 }
 
 function operate(operator, a, b) {
-    resetInputs();
     switch (operator) {
         case "/": return a / b;
         case "*": return a * b;
@@ -42,8 +41,6 @@ function updateDisplay(value) {
         displayText = Number(value).toExponential(maxLength - 4);
     }
 
-    console.log(displayText);
-
     display.textContent = displayText;
 }
 
@@ -53,7 +50,7 @@ keys.forEach(key => {
 
         if (!isNaN(parseFloat(keyValue))) {
             if (currInput === '0') {
-                currInput = keyValue; // This handles leading zero issue.
+                currInput = keyValue;
             } else {
                 currInput += keyValue;
             }
@@ -65,8 +62,7 @@ keys.forEach(key => {
         } else if (keyValue === '=') {
             const result = operate(op, parseFloat(prevInput),
                                    parseFloat(currInput));
-            currInput = result;
-            updateDisplay(currInput);
+            updateDisplay(result);
         } else if (keyValue === 'AC') {
             resetInputs();
             updateDisplay('0');
@@ -82,6 +78,7 @@ keys.forEach(key => {
 
         if (!isOperator(keyValue) || keyValue === '.') {
             updateDisplay(currInput);
+            resetInputs(); 
         }
     })
 })
